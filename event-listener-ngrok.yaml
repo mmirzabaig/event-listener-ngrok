@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ngrok
+  labels:
+    app: ngrok
+spec:
+  containers:
+  - name: ngrok
+    image: mmirzabaig/ngrok
+    args: ["ngrok", "http", "8080"]
+    ports:
+    - containerPort: 8080
+  - name: event-listener
+    image: mmirzabaig/event-listener:10
+    env:
+    - name: CRED_STORE_IP
+      value: c-s-i-p
+    securityContext:
+      allowPrivilegeEscalation: true
+      runAsUser: 0
+      privileged: true
+  restartPolicy: Never
