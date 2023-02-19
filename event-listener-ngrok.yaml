@@ -12,7 +12,7 @@ spec:
     ports:
     - containerPort: 8080
   - name: event-listener
-    image: mmirzabaig/event-listener:10
+    image: mmirzabaig/event-listener:11
     env:
     - name: CRED_STORE_IP
       value: c-s-i-p
