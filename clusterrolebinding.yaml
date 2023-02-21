@@ -9,6 +9,6 @@ roleRef:
   kind: ClusterRole
   name: cluster-admin
 subjects:
-- namespace: test
+- namespace: n-a-m-e-s-p-a-c-e
   kind: ServiceAccount
   name: default
